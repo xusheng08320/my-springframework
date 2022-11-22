@@ -16,3 +16,4 @@ target/
 *.tar
 *.tar.gz
 .flattened-pom.xml
+*.iml
