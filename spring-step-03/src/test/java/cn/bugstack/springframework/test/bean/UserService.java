@@ -2,10 +2,15 @@ package cn.bugstack.springframework.test.bean;
 
 public class UserService {
 
+    private String uId;
+
     private String name;
 
     public UserService(String name) {
         this.name = name;
+    }
+
+    public UserService() {
     }
 
     public void queryUserInfo() {
