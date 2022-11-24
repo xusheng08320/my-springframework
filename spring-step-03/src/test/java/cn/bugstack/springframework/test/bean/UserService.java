@@ -6,6 +6,8 @@ public class UserService {
 
     private String name;
 
+    private String company;
+
     public UserService(String name) {
         this.name = name;
     }
