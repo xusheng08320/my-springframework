@@ -43,4 +43,8 @@ public class UserService implements InitializingBean, DisposableBean {
     public void afterPropertiesSet() throws Exception {
         System.out.println("afterPropertiesSet UserService");
     }
+
+    public void init() {
+        System.out.println("UserService init");
+    }
 }
