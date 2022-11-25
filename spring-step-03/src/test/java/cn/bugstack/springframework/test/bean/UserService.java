@@ -25,4 +25,10 @@ public class UserService {
         sb.append("").append(name);
         return sb.toString();
     }
+
+    public void init() {
+        System.out.println("UserService. init");
+    }
+
+
 }
