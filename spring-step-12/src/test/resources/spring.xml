@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean id="aopService" class="cn.bugstack.springframework.test.aop.AopServiceImpl" />
+
+    <bean class="cn.bugstack.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+
+    <bean id="aopServiceBeforeAdvice" class="cn.bugstack.springframework.test.aop.AopServiceBeforeAdvice"/>
+
+    <bean id="methdInterceptor" class="cn.bugstack.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor">
+        <property name="methodBeforeAdvice" ref="aopServiceBeforeAdvice"/>
+    </bean>
+
+    <bean id="pointcutAdvisor" class="cn.bugstack.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+        <property name="expression" value="execution(* cn.bugstack.springframework.test.aop.IAopService.*(..))"/>
+        <property name="advice" ref="methdInterceptor"/>
+    </bean>
+
+
+
+</beans>
